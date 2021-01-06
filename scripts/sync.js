@@ -109,6 +109,10 @@ function is_locked(cb) {
   }
 }
 
+
+// unlink lock file 
+process.on('uncaughtException', exit);
+
 function exit() {
   remove_lock(function(){
     mongoose.disconnect();
